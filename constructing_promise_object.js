@@ -1,3 +1,5 @@
+// practicing promise objects
+/*
 const inventory = {
     sunglasses: 1900,
     pants: 1088,
@@ -16,3 +18,12 @@ function orderSunglasses() {
 };
 const orderPromise = orderSunglasses();
 console.log(orderPromise);
+*/
+
+// This is practicing setting the timeout
+console.log("This is the first line of code in app.js.");
+function usingSTO() {
+    console.log('This is delayed.');
+};
+setTimeout(usingSTO, 3000);
+console.log("This is the last line of code in app.js.");
