@@ -29,9 +29,9 @@ function usingSTO() {
 setTimeout(usingSTO, 3000);
 console.log("This is the last line of code in app.js.");
 */
-
+// initial sunglasses set to 1900, changed to 0 for catch() practice
 const inventory = {
-    sunglasses: 1900,
+    sunglasses: 0,
     pants: 1088,
     bags: 1344
 };
@@ -56,5 +56,5 @@ function handleSuccess(resolvedValue) {
 function handleFailure(rejectedValue) {
     console.log(rejectedValue);
 };
-
-checkInventory(order).then(handleSuccess, handleFailure);
+// added catch after then practice
+checkInventory(order).then(handleSuccess).catch(handleFailure);
