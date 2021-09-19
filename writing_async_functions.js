@@ -33,8 +33,8 @@ let cookTheBeans = (isSoftened) => {
         }, 1000);
     });
 };
-
-module.exports = {shopForBeans, soakTheBeans, cookTheBeans};
+// Moved module.exports down below the next function
+// module.exports = {shopForBeans, soakTheBeans, cookTheBeans};
 
 /* original function without await
 function getBeans() {
@@ -55,3 +55,24 @@ getBeans();
 
 // added app.js to run all the functions in this code
 */
+
+let randomSuccess = () => {
+    let num = Math.random();
+    return num < .5 ? true : false;
+};
+
+let cookBeanSouffle = () => {
+    return new Promise((resolve, reject) => {
+        console.log(`Fingers crossed... Putting the Bean Souffle in the oven.`);
+        setTimeout(()=>{
+            let success = randomSuccess();
+            if(success) {
+                resolve('Bean Souffle');
+            } else {
+                reject('Dinner is ruined!');
+            }
+        }, 1000);
+    });
+};
+
+module.exports = {shopForBeans, soakTheBeans, cookTheBeans, cookBeanSouffle};
