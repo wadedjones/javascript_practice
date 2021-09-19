@@ -11,10 +11,19 @@ const shopForBeans = () => {
         }, 1000);
     });
 };
-
+/* original function without await
 function getBeans() {
     console.log(`1. Heading to the store to buy beans...`);
     let value = shopForBeans();
+    console.log(`3. Great! I'm making ${value} beans for dinner tonight!`);
+};
+getBeans();
+*/
+// new function with await
+
+async function getBeans() {
+    console.log(`1. Heading to the store to buy beans...`);
+    let value = await shopForBeans();
     console.log(`3. Great! I'm making ${value} beans for dinner tonight!`);
 };
 getBeans();
